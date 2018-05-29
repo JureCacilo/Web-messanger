@@ -1,0 +1,68 @@
+body {
+    background-color: rgb(230, 173, 221);
+    color:white;
+    
+}
+
+
+
+.navbar {
+    background-color: rgb(76, 43, 80);
+    color:white;
+}
+
+.btn {
+    background-color: rgb(76, 43, 80);
+    color:white;
+}
+
+.btn:hover {
+    background: white;
+    color:black;
+}
+
+.button1
+{
+    background-color: white;
+    color: black;
+    border:none;
+}
+
+.button1:hover {
+    background-color: rgb(230, 173, 221);
+}
+
+.purple-border .form-control:focus {
+    border: 1px solid rgb(76, 43, 80);
+    box-shadow: 0 0 0 0.2rem rgb(76, 43, 80, 0.25)
+}
+
+.emote-small {
+    height: 20px;
+    
+}
+
+.fixed-bottom {
+    padding-bottom: 10px;
+}
+
+.messages {
+    width: 60%;
+    padding-top: 10px;
+}
+.card-header {
+    color:black;
+}
+.card-text {
+    color:black;
+}
+
+.empty {
+    height: 200px;
+}
+
+.delete-icon {
+    height:20px;
+    width: 20px;
+    float:right;
+}

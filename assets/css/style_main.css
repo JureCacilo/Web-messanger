@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(230, 173, 221);
+    color:white;
+}
+
+
+.jumbotron {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin:0 auto;
+    color:white;
+    background-color: rgb(76, 43, 80);
+    
+}
+
+.navbar {
+    background-color: rgb(230, 173, 221);
+    color: black;
+}
+
+.btn {
+    background-color: rgb(76, 43, 80);
+    color:white;
+}
+
+.btn:hover {
+    background: white;
+    color:black;
+}
+
+.button1
+{
+    background-color: white;
+    color: black;
+    border:none;
+}
+
+.button1:hover {
+    background-color: rgb(230, 173, 221);
+}

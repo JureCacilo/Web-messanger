@@ -1,0 +1,25 @@
+{%extends "base.html" %} {% block css_link %}
+<link rel="stylesheet" href="/assets/css/style_main.css">{% endblock %} {% block title %}Messenger{% endblock title %} {% block content%}
+
+<nav class="navbar justify-content-between">
+  <a class="navbar-brand ">Messenger</a>
+  <form class="form-inline " method="POST" action="/chat">
+
+
+    
+      <button class="btn  my-2 my-sm-0 btn-lg" type="submit" name="login">Login</button>
+    </a>
+  </form>
+</nav>
+<div class="jumbotron ">
+  <h1>Welcome to messanger!</h1>
+  <p>Please log in!</p>
+
+    <a href="{{ login_url }}"><button type="submit" class="button1 my-2 my-sm-0 btn-lg " name="login" >Login</button></a>
+</div>
+
+<!-- <footer>
+      <p>Spoznavanje novih ljudi in ljubezni na Chat.si! Najboljši in največji klepet v Sloveniji. Ta klepet je brezplačen! Preko chat sob, ki vam jih nudi naša klepetalnica, lahko pridobite nova poznanstva, prijateljstvo, morda se rodi tudi kakšna resna zveza. Dovolite, da vam klepet ponudi možnost zabave in vragolij, ki jih lahko uganjate s chat prijatelji. Zabavajte se s klepetom. </p>
+  </footer> -->
+
+{% endblock content %}
