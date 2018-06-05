@@ -4,6 +4,8 @@ import jinja2
 import webapp2
 from models import Message
 from google.appengine.api import users
+from google.appengine.api import urlfetch
+import json
 
 
 template_dir = os.path.join(os.path.dirname(__file__), "templates")
@@ -88,8 +90,31 @@ class DeleteMessageHandler(BaseHandler):
 
         return self.redirect_to("chat")
 
+class WeatherHandler(BaseHandler):
+   def get(self):
+       url = "http://api.openweathermap.org/data/2.5/weather?q=Maribor&units=metric&appid=2b9448f3b7960c3e992c3d62064c5f19"
+       result= urlfetch.fetch(url)
+       json_data = json.loads(result.content)
+
+       params = {"weather": json_data}
+        
+       return self.render_template("weather.html", params = params)
+
+   def post(self):
+
+        city = self.request.get("city")
+        url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=2b9448f3b7960c3e992c3d62064c5f19"
+        result = urlfetch.fetch(url)
+        json_data = json.loads(result.content)
+
+        params = {"weather": json_data}
+            
+        return self.render_template("weather.html", params = params)
+
+
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler),
     webapp2.Route('/chat', ChatHandler, name="chat"),
     webapp2.Route('/chat/<message_id:\d+>/delete', DeleteMessageHandler),
+    webapp2.Route('/weather', WeatherHandler),
 ], debug=True)

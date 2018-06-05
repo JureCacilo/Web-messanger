@@ -1,0 +1,46 @@
+{%extends "base.html" %} {% block css_link %}
+<link rel="stylesheet" href="/assets/css/style_chat.css"> {% endblock %} {% block title %}Messenger{% endblock title %} {% block content%}
+
+<nav class="navbar justify-content-between">
+    <a class="navbar-brand " href="/chat">Messenger</a>
+    <p class="navbar-brand cc-user">Welcome: {{user.nickname()}}</p>
+    <a href="{{ logout_url }}">
+        <button class="button1  my-2 my-sm-0 btn-lg" type="submit" name="logout">Logout</button>
+    </a>
+
+</nav>
+
+<div class="container mt-3">
+    <h1 class="text-center mb-5">Weather</h1>
+    <div class="row">
+        <form method="POST">
+            <p>City:
+                <input type="text" name="city">
+                <input class="btn" type="submit" name="submit">
+            </p>
+        </form>
+    </div>
+    {% if weather.cod == 200 %}
+    <div class="row">
+        <p>
+            Current temperature : {{weather.main.temp}} stopinj
+        </p>
+
+    </div>
+    <div class="row">
+        <p>
+            Wind: {{weather.wind.speed}} km/s
+        </p>
+    </div>
+    <div class="row">
+        <p>
+            City: {{weather.name}}
+        </p>
+    </div>
+    {% else %}
+    <p>This city doesn't exist!</p>
+    {% endif %}
+
+</div>
+
+{% endblock content%}
